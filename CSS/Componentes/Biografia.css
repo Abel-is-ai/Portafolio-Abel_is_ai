@@ -1,0 +1,109 @@
+/* ==========================================================
+   Componente: Biografía
+   ========================================================== */
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(300px, 420px) 1fr;
+  align-items: center;
+  gap: 64px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+/* ---------- Marco de la foto ---------- */
+.about__frame {
+  --_cut: 24px;
+  --_t: 2px; /* grosor del borde */
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  padding: 10px 16px 16px;
+}
+
+/* Capa 1: borde cyan + tramos morados en las esquinas */
+.about__frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(var(--accent-purple), var(--accent-purple)) top right / 2px 36px no-repeat,
+    linear-gradient(var(--accent-purple), var(--accent-purple)) top right / 64px 2px no-repeat,
+    linear-gradient(var(--accent-purple), var(--accent-purple)) bottom left / 2px 40px no-repeat,
+    linear-gradient(var(--accent-purple), var(--accent-purple)) bottom left / 36px 2px no-repeat,
+    var(--accent-cyan);
+  clip-path: polygon(var(--_cut) 0, 100% 0, 100% calc(100% - var(--_cut)),
+                     calc(100% - var(--_cut)) 100%, 0 100%, 0 var(--_cut));
+}
+
+/* Capa 2: relleno */
+.about__frame::after {
+  content: "";
+  position: absolute;
+  inset: var(--_t);
+  z-index: -1;
+  background: var(--background);
+  clip-path: polygon(calc(var(--_cut) - 1.2px) 0, 100% 0, 100% calc(100% - var(--_cut) + 1.2px),
+                     calc(100% - var(--_cut) + 1.2px) 100%, 0 100%, 0 calc(var(--_cut) - 1.2px));
+}
+
+/* Encabezado: // FOTO_01 ........ ● ONLINE */
+.about__bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4px 8px 28px;
+  color: var(--text-secondary);
+  font: var(--code-weight) 12px/var(--code-line) var(--font-secundaria);
+}
+.about__online { display: flex; align-items: center; gap: 8px; }
+.about__online::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 6px var(--success);
+}
+
+/* Foto (img sin src = espacio reservado) */
+.about__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 16px;
+  background: var(--surface);
+}
+.about__photo:not([src]) { outline: 1px dashed var(--border); outline-offset: -1px; }
+
+/* Marcas laterales (detalle LED) */
+.about__tick {
+  position: absolute;
+  top: 50%;
+  width: 2px;
+  height: 14px;
+  background: var(--accent-cyan);
+  transform: translateY(-50%);
+}
+.about__tick--l { left: 4px; }
+.about__tick--r { right: 4px; }
+
+/* ---------- Texto ---------- */
+.about__text { max-width: 440px; }
+.about__text p { margin: 0; }
+.about__text .about__tech-title { margin-top: 40px; }
+
+.about__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 800px) {
+  .about { grid-template-columns: 1fr; gap: 40px; padding: 64px 24px; }
+  .about__frame { max-width: 420px; margin: 0 auto; }
+}

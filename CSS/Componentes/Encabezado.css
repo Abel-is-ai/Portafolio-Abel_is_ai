@@ -1,0 +1,61 @@
+/* ==========================================================
+   Componente: Encabezado (barra superior)
+   Solo escritorio: aparece al pasar el banner principal
+   ========================================================== */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: color-mix(in srgb, var(--background) 85%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--accent-cyan);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--accent-cyan) 25%, transparent);
+
+  /* Oculto hasta pasar el banner */
+  transform: translateY(-100%);
+  visibility: hidden;
+  transition: transform .3s, visibility .3s;
+}
+.topbar.is-visible {
+  transform: none;
+  visibility: visible;
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 56px;
+}
+
+.topbar__logo {
+  color: var(--text-primary);
+  text-decoration: none;
+  font: 700 var(--h3-size)/var(--h3-line) var(--font-principal);
+}
+.topbar__logo span {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 12px color-mix(in srgb, var(--accent-cyan) 60%, transparent);
+}
+
+.topbar__nav { display: flex; gap: 48px; }
+.topbar__nav a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font: var(--code-weight) var(--small-size)/var(--small-line) var(--font-secundaria);
+}
+.topbar__nav a:hover { color: var(--text-primary); }
+.topbar a:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 4px; }
+
+/* Las secciones no quedan tapadas por la barra al navegar por enlaces */
+html { scroll-padding-top: 80px; }
+
+/* ---------- Móvil: no se usa (ahí está el menú desplegable) ---------- */
+@media (max-width: 800px) {
+  .topbar { display: none; }
+  html { scroll-padding-top: 0; }
+}

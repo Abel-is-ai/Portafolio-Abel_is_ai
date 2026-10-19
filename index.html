@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abel_is_ai | Desarrollo Web</title>
+  <link rel="stylesheet" href="CSS/Main.css">  
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO (aparece al pasar el banner, solo escritorio) ===== -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="topbar__logo" href="#inicio">Abel_is<span>_ai</span></a>
+      <nav class="topbar__nav" aria-label="Principal">
+        <a href="#sobre-mi">01_SOBRE_MÍ</a>
+        <a href="#proyectos">02_PROYECTOS</a>
+        <a href="#contacto">03_CONTACTO</a>
+      </nav>
+    </div>
+  </header>
+ 
+  <!-- ===== MENÚ DE ACCESO RÁPIDO ===== -->
+  <nav class="menu" aria-label="Acceso rápido">
+    <button class="menu__btn" type="button" aria-expanded="false" aria-controls="menuPanel" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="menu__panel" id="menuPanel" hidden>
+      <p class="menu__label">// MENÚ DE OPCIONES</p>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#proyectos">Mis proyectos</a></li>
+        <li><a href="#contacto">Contáctame</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== BANNER ===== -->
+  <header class="banner" id="inicio">
+
+    <img class="banner__bg" alt="" src="Imagenes/FondoFuturista.jpg">
+    <img class="banner__person" alt="Abel" src="Imagenes/YoFuturista.png">
+
+    <!-- Esquinas -->
+    <span class="banner__corner banner__corner--tl"></span>
+    <span class="banner__corner banner__corner--tr"></span>
+    <span class="banner__corner banner__corner--bl"></span>
+    <span class="banner__corner banner__corner--br"></span>
+
+    <!-- Estado -->
+    <span class="banner__status">DISPONIBLE</span>
+
+    <!-- Navegación -->
+    <nav class="banner__nav">
+      <a href="#sobre-mi">01_SOBRE_MÍ</a>
+      <a href="#proyectos">02_PROYECTOS</a>
+      <a href="#contacto">03_CONTACTO</a>
+    </nav>
+
+    <!-- Contenido -->
+    <div class="banner__content">
+      <h1 class="banner__title hero">Abel_is<span>_ai</span></h1>
+      <p class="banner__role h3">Mente creativa / Programador</p>
+      <div class="banner__actions">
+        <a class="btn btn--primary" href="#contacto">Contactar</a>
+        <a class="btn btn--secondary" href="#proyectos">Ver proyectos</a>
+      </div>
+    </div>
+
+    <!-- Versión -->
+    <span class="banner__version">// VERSIÓN: 4.444</span>
+
+  </header>
+
+  <!-- ===== SOBRE MÍ ===== -->
+  <section class="about" id="sobre-mi">
+ 
+    <figure class="about__frame">
+      <figcaption class="about__bar">
+        <span>// FOTO_01</span>
+        <span class="about__online">ONLINE</span>
+      </figcaption>
+      <img class="about__photo" alt="Abel Isai Vargas Rodríguez" src="Imagenes/Foto.jpeg">
+      <span class="about__tick about__tick--l"></span>
+      <span class="about__tick about__tick--r"></span>
+    </figure>
+ 
+    <div class="about__text">
+      <p>Mi nombre es Abel Isai Vargas Rodríguez. Soy de Guadalajara, Jalisco. Tengo un título de ingeniero en desarrollo de software multiplataforma y dos títulos de técnico en programación.</p>
+      <p>Lo que me apasiona de trabajar con la tecnología es toda la “magia” que existe detrás de una pantalla; ver cómo un simple botón puede llevar tantas líneas de código por detrás.</p>
+      <p>Fuera de mi ámbito profesional, soy un catador de café no profesional, fan de las historias de ciencia ficción y fantasía. Disfruto de practicar skate o jugar videojuegos en mis tiempos libres.</p>
+ 
+      <p class="about__tech-title">Tecnologías que he utilizado:</p>
+      <div class="about__tags">
+        <span class="tag tag--error">Laravel</span>
+        <span class="tag tag--error">C++</span>
+        <span class="tag tag--error">Python</span>
+        <span class="tag tag--error">Java</span>
+        <span class="tag tag--error">GitHub</span>
+        <span class="tag tag--error">SQL</span>
+        <span class="tag tag--error">MongoDB</span>
+        <span class="tag tag--error">Android Studio</span>
+      </div>
+    </div>
+ 
+  </section>
+
+  <!-- ===== MIS PROYECTOS ===== -->
+  <section class="projects" id="proyectos">
+    <h2 class="projects__title h1">
+      <span class="projects__tag">&lt;H1&gt;</span>
+      Mis proyectos
+      <span class="projects__tag">&lt;/H1&gt;</span>
+    </h2>
+    <p class="projects__intro secundaria">Te muestro mis mejores trabajos y las tecnologías que utilicé para crearlos.</p>
+ 
+    <div class="projects__grid">
+      <article class="project">
+        <img class="project__img" alt="">
+        <div class="project__body">
+          <h3 class="project__name">Nombre del proyecto</h3>
+          <p class="project__desc">&gt; Descripción del proyecto de dos líneas o más.</p>
+          <div class="project__tags">
+            <span class="tag tag--purple">React</span>
+            <span class="tag tag--purple">Figma</span>
+            <span class="tag tag--purple">Laravel</span>
+          </div>
+          <div class="project__actions">
+            <a class="btn btn--primary" href="#">Visitar sitio</a>
+            <a class="btn btn--secondary" href="#">Proceso</a>
+          </div>
+        </div>
+      </article>
+      <article class="project">
+        <img class="project__img" alt="">
+        <div class="project__body">
+          <h3 class="project__name">Nombre del proyecto</h3>
+          <p class="project__desc">&gt; Descripción del proyecto de dos líneas o más.</p>
+          <div class="project__tags">
+            <span class="tag tag--purple">React</span>
+            <span class="tag tag--purple">Figma</span>
+            <span class="tag tag--purple">Laravel</span>
+          </div>
+          <div class="project__actions">
+            <a class="btn btn--primary" href="#">Visitar sitio</a>
+            <a class="btn btn--secondary" href="#">Proceso</a>
+          </div>
+        </div>
+      </article>
+      <article class="project">
+        <img class="project__img" alt="">
+        <div class="project__body">
+          <h3 class="project__name">Nombre del proyecto</h3>
+          <p class="project__desc">&gt; Descripción del proyecto de dos líneas o más.</p>
+          <div class="project__tags">
+            <span class="tag tag--purple">React</span>
+            <span class="tag tag--purple">Figma</span>
+            <span class="tag tag--purple">Laravel</span>
+          </div>
+          <div class="project__actions">
+            <a class="btn btn--primary" href="#">Visitar sitio</a>
+            <a class="btn btn--secondary" href="#">Proceso</a>
+          </div>
+        </div>
+      </article>
+      <article class="project">
+        <img class="project__img" alt="">
+        <div class="project__body">
+          <h3 class="project__name">Nombre del proyecto</h3>
+          <p class="project__desc">&gt; Descripción del proyecto de dos líneas o más.</p>
+          <div class="project__tags">
+            <span class="tag tag--purple">React</span>
+            <span class="tag tag--purple">Figma</span>
+            <span class="tag tag--purple">Laravel</span>
+          </div>
+          <div class="project__actions">
+            <a class="btn btn--primary" href="#">Visitar sitio</a>
+            <a class="btn btn--secondary" href="#">Proceso</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+   <!-- ===== MI FORMA DE TRABAJAR ===== -->
+  <section class="workflow" id="proceso">
+    <h2 class="workflow__title h1">Mi forma de trabajar <span class="workflow__mark">;</span></h2>
+    <p class="workflow__intro secundaria">Así trabajaremos en tu proyecto.</p>
+ 
+    <div class="workflow__grid">
+      <article class="step">
+        <div class="step__head">
+          <h3 class="step__title h2">Identificar</h3>
+          <span class="step__num">00</span>
+        </div>
+        <p class="step__text">Planificamos tu proyecto con base en tus requerimientos y metas; qué es lo que se quiere lograr y cómo. Identificamos el tipo de página que necesitas.</p>
+      </article>
+      <article class="step">
+        <div class="step__head">
+          <h3 class="step__title h2">Personalizar</h3>
+          <span class="step__num">01</span>
+        </div>
+        <p class="step__text">Una vez definida la base de tu proyecto, la adecuamos a la personalidad de tu marca. Trabajamos los colores y el ambiente para entregarte un producto a tu medida.</p>
+      </article>
+      <article class="step">
+        <div class="step__head">
+          <h3 class="step__title h2">Prototipar</h3>
+          <span class="step__num">02</span>
+        </div>
+        <p class="step__text">Creamos en Figma un primer boceto no funcional de la página para recibir tu opinión sobre los detalles visuales. Plasmamos lo que imaginas.</p>
+      </article>
+      <article class="step">
+        <div class="step__head">
+          <h3 class="step__title h2">Codificar</h3>
+          <span class="step__num">03</span>
+        </div>
+        <p class="step__text">Con supervisión profesional y apoyo de herramientas de IA, programamos el diseño y lo convertimos en un sitio totalmente funcional, lo más fiel posible al prototipo.</p>
+      </article>
+      <article class="step">
+        <div class="step__head">
+          <h3 class="step__title h2">Desplegar</h3>
+          <span class="step__num">04</span>
+        </div>
+        <p class="step__text">Subimos la versión final del proyecto a un servidor público, con tu cuenta y tus datos, y te otorgamos el acceso total. Verificamos que todo funcione correctamente.</p>
+      </article>
+      <article class="step">
+        <div class="step__head">
+          <h3 class="step__title h2">Observar</h3>
+          <span class="step__num">05</span>
+        </div>
+        <p class="step__text">Tienes 30 días de garantía después de la entrega. Si aparece algún error funcional, lo corregimos sin costo. La garantía no incluye cambios nuevos de diseño o contenido.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== CTA WHATSAPP ===== -->
+  <a class="cta" href="https://wa.me/523322412775" target="_blank" rel="noopener">
+    <img class="cta__icon" alt="Ícono de WhatsApp" src="Imagenes/WhatsAppFuturista.png">
+    <div class="cta__text">
+      <h2 class="cta__title h1">¡Contáctame directamente aquí!</h2>
+      <p class="cta__sub h3">Cotiza sin costo alguno.</p>
+    </div>
+  </a>
+
+  <!-- ===== PREGUNTAS FRECUENTES ===== -->
+  <section class="faq" id="faq">
+    <h2 class="faq__title h1">Preguntas frecuentes</h2>
+    <div class="faq__list">
+        <details class="faq__item">
+          <summary class="faq__q">&gt; ¿Por qué mi negocio necesita una página web?</summary>
+          <p class="faq__a">&gt; Una página web te permite presentar tus productos o servicios,
+          fortalecer la imagen de tu negocio y llegar a nuevos clientes. Además, facilita que las personas conozcan tu propuesta y
+          encuentren información sobre tu negocio en cualquier momento.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">&gt; ¿Por qué elegirme como desarrollador de tu página web?</summary>
+          <p class="faq__a">&gt; Trabajo personalmente en cada etapa del proyecto, desde la
+            planificación hasta la entrega. Mi objetivo es crear páginas web
+            atractivas, funcionales y fáciles de utilizar, cuidando los detalles
+            y manteniendo una comunicación directa para adaptar el resultado
+            a las necesidades de cada cliente.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">&gt; ¿Utilizas inteligencia artificial en el desarrollo web?</summary>
+          <p class="faq__a">&gt; Sí, utilizo herramientas de inteligencia artificial como apoyo para optimizar ciertas tareas y explorar soluciones. Sin embargo,
+            cada proyecto requiere criterio humano, atención al detalle y pruebas para cuidar su funcionalidad, diseño y experiencia de uso. La IA no reemplaza la 
+            creatividad ni el juicio humano: es una herramienta que ayuda a lograr resultados más rápidos y precisos.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">&gt; ¿Qué tipos de páginas web desarrollas? </summary>
+          <p class="faq__a">&gt; Desarrollo páginas web personalizadas para negocios, profesionales y proyectos personales. Desde sitios informativos y portafolios
+            hasta páginas promocionales y catálogos, adapto cada proyecto a sus objetivos y necesidades. En esta misma página encontrarás las diferencias entre los 
+            tipos de páginas web que desarrollo, para que elijas la más adecuada para tu negocio.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">&gt; ¿Cuánto cuesta desarrollar una página web?</summary>
+          <p class="faq__a">&gt; El costo depende del tipo de página, de su complejidad y de las funcionalidades que necesites. Podemos revisar tu idea y definir
+            una propuesta acorde con los objetivos y el alcance de tu proyecto. Contáctame para solicitar una cotización.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">&gt; ¿Mi página web funcionará en celulares y tabletas?</summary>
+          <p class="faq__a">&gt; Sí, desarrollo interfaces adaptables a diferentes tamaños de pantalla para facilitar la navegación desde celulares, tabletas
+            y computadoras. También considero la legibilidad, la organización del contenido y la facilidad de uso.
+          </p>
+        </details>
+    </div>
+  </section>
+
+  <!-- ===== TIPOS DE PÁGINAS ===== -->
+  <section class="tipos" id="tipos">
+    <h2 class="tipos__title h1">Tipos de páginas</h2>
+    <div class="carousel" role="region" aria-roledescription="carrusel" aria-label="Tipos de páginas" tabindex="0">
+      <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Anterior"></button>
+      <article class="carousel__slide">
+        <h3 class="carousel__name h2">Landing page</h3>
+        <div class="carousel__info">
+          <p class="carousel__text">Una landing page es una página web diseñada con el único objetivo de guiar a los usuarios hacia una acción específica, como registrarse, 
+            comprar un producto o descargar un recurso. Se centra en la conversión y suele tener un diseño limpio y directo, con información clara y un llamado a la acción destacado.</p>
+          <ul class="carousel__list">
+            <li>Diseño adaptable a celular</li>
+            <li>Llamado a la acción destacado</li>
+            <li>Formulario o botón de contacto</li>
+          </ul>
+        </div>
+        <div class="wire" aria-hidden="true"><i class="w-bar"></i><i class="w-line w-m"></i><i class="w-line w-s"></i><i class="w-cta"></i><i class="w-block"></i></div>
+      </article>
+      <article class="carousel__slide">
+        <h3 class="carousel__name h2">Página corporativa</h3>
+        <div class="carousel__info">
+          <p class="carousel__text">Una página corporativa es el sitio que representa a la empresa y muestra su identidad, valores y servicios. Su objetivo principal no es vender directamente, 
+            sino informar, posicionar la marca y generar credibilidad entre los usuarios.</p>
+          <ul class="carousel__list">
+            <li>Secciones de servicios y valores</li>
+            <li>Apartado “Quiénes somos”</li>
+            <li>Datos de contacto y ubicación</li>
+          </ul>
+        </div>
+        <div class="wire" aria-hidden="true"><i class="w-bar"></i><i class="w-block"></i><div class="w-row"><i class="w-card"></i><i class="w-card"></i><i class="w-card"></i></div><i class="w-line w-l"></i><i class="w-line w-m"></i></div>
+      </article>
+      <article class="carousel__slide">
+        <h3 class="carousel__name h2">Blog</h3>
+        <div class="carousel__info">
+          <p class="carousel__text">Un blog es una página donde se publican artículos de forma periódica para compartir conocimiento, atraer visitas y posicionar tu marca como experta en un tema.
+            Es una forma excelente de expresar pensamientos y opiniones. 
+          </p>
+          <ul class="carousel__list">
+            <li>Listado de artículos y categorías</li>
+            <li>Página de lectura limpia</li>
+            <li>Buscador y suscripción por correo</li>
+          </ul>
+        </div>
+        <div class="wire" aria-hidden="true"><i class="w-bar"></i><div class="w-item"><i class="w-card"></i><div><i class="w-line w-l"></i><i class="w-line w-m"></i></div></div><div class="w-item"><i class="w-card"></i><div><i class="w-line w-l"></i><i class="w-line w-m"></i></div></div><div class="w-item"><i class="w-card"></i><div><i class="w-line w-l"></i><i class="w-line w-m"></i></div></div></div>
+      </article>
+      <article class="carousel__slide">
+        <h3 class="carousel__name h2">Tienda en línea</h3>
+        <div class="carousel__info">
+          <p class="carousel__text">Una tienda en línea es una página donde puedes mostrar tu catálogo y vender productos por internet, con carrito de compras y métodos de pago. Funciona las 24 horas, desde cualquier lugar, y ofrece a los 
+            compradores una experiencia cómoda, segura y rápida.
+          </p>
+          <ul class="carousel__list">
+            <li>Catálogo con fotos y precios</li>
+            <li>Carrito y proceso de compra</li>
+            <li>Pagos en línea seguros</li>
+          </ul>
+        </div>
+        <div class="wire" aria-hidden="true"><i class="w-bar"></i><div class="w-row"><i class="w-card"></i><i class="w-card"></i><i class="w-card"></i></div><div class="w-row"><i class="w-card"></i><i class="w-card"></i><i class="w-card"></i></div><i class="w-cta"></i></div>
+      </article>
+      <article class="carousel__slide">
+        <h3 class="carousel__name h2">Portafolio</h3>
+        <div class="carousel__info">
+          <p class="carousel__text">Un portafolio es una página que reúne y presenta tus mejores trabajos (documentos, imágenes, videos, proyectos, presentaciones, etc.) para mostrar tu experiencia y atraer nuevos clientes o empleadores.
+            Sirve como una carta de presentación ante tu público. 
+          </p>
+          <ul class="carousel__list">
+            <li>Galería de trabajos destacados</li>
+            <li>Sección sobre ti y tus habilidades</li>
+            <li>Contacto directo</li>
+          </ul>
+        </div>
+        <div class="wire" aria-hidden="true"><i class="w-bar"></i><div class="w-row w-row--2"><i class="w-card"></i><i class="w-card"></i><i class="w-card"></i><i class="w-card"></i></div></div>
+      </article>
+      <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Siguiente"></button>
+      <div class="carousel__loading" aria-hidden="true">CARGANDO...
+        <div class="carousel__track"><span class="carousel__fill"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTÁCTAME ===== -->
+  <section class="contact" id="contacto">
+    <h2 class="contact__title h1">
+      <span class="contact__brace">{</span>
+      Contáctame
+      <span class="contact__brace">}</span>
+    </h2>
+    <p class="contact__intro secundaria">¡No pierdas la oportunidad! Envíame un mensaje y trabajemos juntos.</p>
+ 
+    <div class="contact__card">
+      <div class="contact__bar">
+        <span>// Formulario para proyectos</span>
+        <span class="contact__online">ONLINE</span>
+      </div>
+ 
+      <form class="contact__form" id="contactForm" novalidate>
+        <h3 class="contact__heading h3">¿Cuál es tu idea?</h3>
+        <p class="contact__lead">Deja tu información y te respondo lo antes posible.</p>
+ 
+        <div class="field">
+          <label class="field__label" for="cNombre">&gt; Nombre</label>
+          <input class="field__input" id="cNombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" aria-describedby="eNombre">
+          <p class="field__error" id="eNombre" role="alert"></p>
+        </div>
+ 
+        <div class="field">
+          <label class="field__label" for="cCorreo">&gt; Correo</label>
+          <input class="field__input" id="cCorreo" name="correo" type="email" placeholder="tu@correo.com" autocomplete="email" aria-describedby="eCorreo">
+          <p class="field__error" id="eCorreo" role="alert"></p>
+        </div>
+ 
+        <div class="field">
+          <label class="field__label" for="cTipo">&gt; Tipo de proyecto</label>
+          <select class="field__input" id="cTipo" name="tipo" required aria-describedby="eTipo">
+            <option value="" disabled selected hidden>Selecciona una opción</option>
+            <option>Landing page</option>
+            <option>Página corporativa</option>
+            <option>Portafolio</option>
+            <option>Tienda en línea</option>
+            <option>Blog</option>
+            <option>Otro</option>
+          </select>
+          <p class="field__error" id="eTipo" role="alert"></p>
+        </div>
+ 
+        <div class="field">
+          <label class="field__label" for="cPresupuesto">&gt; Presupuesto</label>
+          <select class="field__input" id="cPresupuesto" name="presupuesto" required aria-describedby="ePresupuesto">
+            <option value="" disabled selected hidden>Selecciona un rango</option>
+            <option>Menos de $5,000 MXN</option>
+            <option>$5,000 – $10,000 MXN</option>
+            <option>$10,000 – $20,000 MXN</option>
+            <option>Más de $20,000 MXN</option>
+            <option>Aún no lo sé</option>
+          </select>
+          <p class="field__error" id="ePresupuesto" role="alert"></p>
+        </div>
+ 
+        <div class="field field--full">
+          <label class="field__label" for="cHorario">&gt; Horario disponible para una cita</label>
+          <select class="field__input" id="cHorario" name="horario" required aria-describedby="eHorario">
+            <option value="" disabled selected hidden>Selecciona un horario</option>
+            <option>Mañana (9:00 – 12:00)</option>
+            <option>Tarde (12:00 – 17:00)</option>
+            <option>Noche (17:00 – 20:00)</option>
+            <option>Cualquier horario</option>
+          </select>
+          <p class="field__error" id="eHorario" role="alert"></p>
+        </div>
+ 
+        <div class="field field--full">
+          <label class="field__label" for="cMensaje">&gt; Cuéntame sobre tu proyecto</label>
+          <textarea class="field__input" id="cMensaje" name="mensaje" maxlength="500" placeholder="Escribe aquí..." aria-describedby="eMensaje"></textarea>
+          <p class="field__error" id="eMensaje" role="alert"></p>
+        </div>
+        <p class="contact__count" aria-hidden="true">0/500</p>
+ 
+        <button class="btn btn--secondary btn--block btn--upper contact__submit" type="submit">Enviar datos</button>
+        <p class="contact__status" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+ 
+      <div class="footer__brand">
+        <p class="footer__logo hero">Abel_is<span>_ai</span></p>
+        <p class="footer__about secundaria">Creo páginas web con ayuda de IA y supervisión profesional: más velocidad, mejor calidad y un costo accesible para tu negocio.</p>
+      </div>
+ 
+      <nav aria-label="Navegación del pie de página">
+        <h2 class="footer__title h3">Navegación</h2>
+        <ul class="footer__links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#proyectos">Mis proyectos</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contáctame</a></li>
+        </ul>
+      </nav>
+ 
+      <div>
+        <h2 class="footer__title h3">Contacto</h2>
+        <address class="footer__contact">
+          <a href="mailto:aivargasrodriguez@gmail.com">aivargasrodriguez@gmail.com</a>
+          <a href="https://wa.me/523322412775">33 2241 2775</a>
+          <span>Guadalajara, Jalisco</span>
+        </address>
+        <div class="footer__social">
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><img alt="Instagram" src="Imagenes/Instagram.png"></a>
+          <a href="https://wa.me/523322412775" target="_blank" rel="noopener" aria-label="WhatsApp"><img alt="WhatsApp" src="Imagenes/WhatsApp.png"></a>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <div class="footer__legal">
+      <small>© 2026 Abel_is_ai. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+<script type="module" src="JavaScript/Main.js"></script>
+
+</body>
+</html>

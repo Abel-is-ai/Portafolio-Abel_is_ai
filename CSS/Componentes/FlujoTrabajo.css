@@ -1,0 +1,71 @@
+/* ==========================================================
+   Componente: Mi forma de trabajar
+   ========================================================== */
+
+.workflow {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+/* ---------- Encabezado ---------- */
+.workflow__title {
+  text-align: center;
+  text-transform: uppercase;
+}
+.workflow__mark {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 12px var(--accent-cyan);
+  font-family: var(--font-secundaria);
+}
+.workflow__intro {
+  margin: 12px 0 48px;
+  text-align: center;
+}
+
+/* ---------- Grilla de pasos ---------- */
+.workflow__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--accent-cyan);
+  border-left: 1px solid var(--accent-cyan);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent-cyan) 20%, transparent);
+}
+
+/* ---------- Paso ---------- */
+.step {
+  position: relative;
+  padding: 28px 32px 32px;
+  background: var(--surface);
+  border-right: 1px solid var(--accent-cyan);
+  border-bottom: 1px solid var(--accent-cyan);
+}
+
+.step__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.step__title { text-transform: uppercase; }
+.step__num { color: var(--text-secondary); font: var(--h2-weight) var(--h2-size)/var(--h2-line) var(--font-principal); }
+.step__text { margin: 0; max-width: 340px; color: var(--text-secondary); }
+
+/* Esquinas moradas: arriba-derecha y abajo-izquierda */
+.step::before,
+.step::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border: 0 solid var(--accent-purple);
+}
+.step::before { top: 8px;    right: 8px; border-width: 2px 2px 0 0; }
+.step::after  { bottom: 8px; left: 8px;  border-width: 0 0 2px 2px; }
+
+/* ---------- Móvil ---------- */
+@media (max-width: 800px) {
+  .workflow__grid { grid-template-columns: 1fr; }
+  .step { padding: 24px; }
+}

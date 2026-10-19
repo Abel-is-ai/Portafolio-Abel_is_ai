@@ -1,0 +1,164 @@
+/* ==========================================================
+   Componente: Banner
+   Usa las variables de styles.css
+   ========================================================== */
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--surface);
+}
+
+/* ---------- Espacios para imágenes ---------- */
+.banner__bg,
+.banner__person {
+  position: absolute;
+  display: block;
+}
+
+/* Fondo: cubre todo el banner */
+.banner__bg {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(.55); /* fondo más oscuro */
+}
+
+/* Persona: abajo a la izquierda */
+.banner__person {
+  left: -5%;
+  bottom: -10%;
+  width: 72%;
+  height: 130%;
+  object-fit: contain;
+  object-position: left bottom;
+  /* sombra oscura para separarlo del fondo */
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, .85));
+}
+
+/* Mientras no haya imagen (img sin src) se ve el espacio reservado */
+.banner img:not([src]) {
+  outline: 1px dashed var(--border);
+  outline-offset: -1px;
+}
+
+/* ---------- Esquinas (detalle LED) ---------- */
+.banner__corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 0 solid var(--accent-cyan);
+}
+.banner__corner--tl { top: 24px;    left: 24px;  border-width: 2px 0 0 2px; }
+.banner__corner--tr { top: 24px;    right: 24px; border-width: 2px 2px 0 0; }
+.banner__corner--bl { bottom: 24px; left: 24px;  border-width: 0 0 2px 2px; }
+.banner__corner--br { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; }
+
+/* ---------- Estado: Disponible ---------- */
+.banner__status {
+  position: absolute;
+  top: 56px;
+  left: 56px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--success);
+  font: var(--code-weight) var(--small-size)/var(--small-line) var(--font-secundaria);
+  animation: banner-status 1.6s ease-in-out infinite;
+}
+@keyframes banner-status { 50% { opacity: .25; } }
+
+.banner__status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 8px var(--success);
+}
+
+/* ---------- Navegación ---------- */
+.banner__nav {
+  position: absolute;
+  top: 56px;
+  left: 45%;
+  right: 56px;
+  display: flex;
+  justify-content: space-around;
+}
+.banner__nav a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font: var(--code-weight) var(--small-size)/var(--small-line) var(--font-secundaria);
+}
+.banner__nav a:hover { color: var(--text-primary); }
+
+/* ---------- Contenido central ---------- */
+.banner__content {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  right: 56px;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.banner__title {
+  margin: 0;
+  color: var(--text-primary);
+}
+.banner__title span { color: var(--accent-cyan); }
+
+/* Cursor parpadeante */
+.banner__title::after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 0.8em;
+  margin-left: 12px;
+  background: var(--accent-cyan);
+  vertical-align: middle;
+  animation: banner-cursor 1s steps(1) infinite;
+}
+@keyframes banner-cursor { 50% { opacity: 0; } }
+
+.banner__role {
+  margin: 0 0 32px;
+  color: var(--accent-cyan);
+}
+
+/* ---------- Botones (estilo global en buttons.css) ---------- */
+.banner__actions {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+.banner__actions .btn { flex: 1; max-width: 220px; }
+
+/* ---------- Versión ---------- */
+.banner__version {
+  position: absolute;
+  right: 56px;
+  bottom: 40px;
+  color: var(--accent-cyan);
+  font: var(--code-weight) var(--small-size)/var(--small-line) var(--font-secundaria);
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 800px) {
+  .banner__person { display: none; } /* sin foto en móvil */
+  .banner__nav { display: none; }
+  .banner__content { left: 24px; right: 24px; top: 50%; }
+  .banner__actions { flex-direction: column; align-items: center; }
+  .banner__actions .btn { width: 100%; max-width: 280px; }
+  .banner__status { left: 40px; }
+  .banner__version { right: 40px; }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .banner__title::after { animation: none; }
+  .banner__status { animation: none; }
+}

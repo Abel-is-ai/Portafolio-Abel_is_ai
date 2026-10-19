@@ -1,0 +1,165 @@
+/* ==========================================================
+   Componente: Tipos de páginas (carrusel)
+   ========================================================== */
+
+.tipos {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+.tipos__title {
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ---------- Carrusel ----------
+   Todos los slides ocupan la misma celda: el panel siempre
+   mide lo que el slide más alto, y no "salta" al cambiar. */
+.carousel {
+  position: relative;
+  display: grid;
+  padding: 40px 96px 72px;
+  background: var(--surface);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--accent-purple) 20%, transparent);
+}
+.carousel:focus-visible { outline: 2px solid var(--accent-cyan); outline-offset: 4px; }
+
+/* Marco morado con tramos (detalle LED) */
+.carousel::before {
+  --_p: linear-gradient(var(--accent-purple), var(--accent-purple));
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    var(--_p) top left / 42% 2px no-repeat,
+    var(--_p) top left / 2px 32% no-repeat,
+    var(--_p) bottom left / 2px 12% no-repeat,
+    var(--_p) bottom left / 16% 2px no-repeat,
+    var(--_p) bottom right / 46% 2px no-repeat,
+    var(--_p) right 0 top 72px / 2px 74px no-repeat,
+    var(--_p) right 0 top 162px / 2px 130px no-repeat,
+    var(--_p) right 0 bottom 0 / 2px 30% no-repeat;
+}
+
+/* ---------- Slide ---------- */
+.carousel__slide {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px 48px;
+  align-items: start;
+}
+.carousel__slide[hidden] { display: grid; visibility: hidden; }
+
+.carousel__name {
+  grid-column: 1 / -1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.carousel__info { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.carousel__text { margin: 0; color: var(--text-secondary); }
+.carousel__tags { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.carousel__list {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: var(--code-weight) var(--code-size)/var(--code-line) var(--font-secundaria);
+}
+.carousel__list li::before { content: "> "; color: var(--accent-cyan); }
+
+/* ---------- Esquema de la página (dibujado con CSS) ---------- */
+.wire {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 12px;
+  background: var(--background);
+  border: 1px solid var(--accent-dark);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--accent-cyan) 15%, transparent);
+}
+.wire i { display: block; background: var(--border); }
+.wire .w-bar   { height: 10px; }
+.wire .w-line  { height: 6px; background: color-mix(in srgb, var(--text-secondary) 45%, transparent); }
+.wire .w-s { width: 40%; }
+.wire .w-m { width: 65%; }
+.wire .w-l { width: 90%; }
+.wire .w-cta {
+  width: 35%;
+  height: 14px;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-cyan) 50%, transparent);
+}
+.wire .w-block { height: 56px; border: 1px solid color-mix(in srgb, var(--accent-purple) 60%, transparent); }
+.wire .w-card  { height: 44px; }
+.wire .w-row   { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.wire .w-row--2 { grid-template-columns: repeat(2, 1fr); }
+.wire .w-item  { display: grid; grid-template-columns: 40px 1fr; gap: 8px; align-items: center; }
+.wire .w-item div { display: grid; gap: 6px; }
+.wire .w-item .w-card { height: 32px; }
+
+/* ---------- Flechas ◀ ▶ ---------- */
+.carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 16px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.carousel__arrow--prev { left: 24px; }
+.carousel__arrow--next { right: 24px; }
+.carousel__arrow::before {
+  content: "";
+  display: block;
+  border-block: 7px solid transparent;
+  filter: drop-shadow(0 0 6px var(--accent-purple));
+}
+.carousel__arrow--prev::before { border-right: 11px solid var(--text-primary); }
+.carousel__arrow--next::before { border-left: 11px solid var(--text-primary); }
+.carousel__arrow:hover::before { filter: drop-shadow(0 0 10px var(--accent-cyan)); }
+.carousel__arrow:focus-visible { outline: 2px solid var(--accent-cyan); outline-offset: -4px; }
+
+/* ---------- CARGANDO ... (tiempo hasta el siguiente slide) ---------- */
+.carousel__loading {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  font: var(--code-weight) 10px/12px var(--font-secundaria);
+  color: var(--text-primary);
+}
+.carousel__track {
+  width: 94px;
+  height: 16px;
+  margin-top: 4px;
+  background: var(--text-primary);
+  border: 1px solid var(--text-secondary);
+}
+.carousel__fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-cyan);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: carousel-fill var(--carousel-duration, 6s) linear forwards;
+}
+@keyframes carousel-fill { to { transform: scaleX(1); } }
+
+/* Pausa la barra (y el avance) mientras el cursor está sobre el carrusel */
+.carousel:hover .carousel__fill { animation-play-state: paused; }
+
+/* ---------- Móvil ---------- */
+@media (max-width: 800px) {
+  .carousel { padding: 32px 48px 72px; }
+  .carousel__slide { grid-template-columns: 1fr; }
+  .wire { max-width: 320px; }
+  .carousel__arrow--prev { left: 4px; }
+  .carousel__arrow--next { right: 4px; }
+}

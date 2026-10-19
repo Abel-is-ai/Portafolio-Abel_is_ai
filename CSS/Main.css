@@ -1,0 +1,20 @@
+/* ==========================================================
+   Hoja de estilos principal
+   ========================================================== */
+
+/* Base: colores y tipografía */
+@import url("General/Styles.css");
+
+/* Componentes */
+@import url("Componentes/Banner.css");
+@import url("Componentes/Botones.css");
+@import url("Componentes/Biografia.css");
+@import url("Componentes/Proyectos.css");
+@import url("Componentes/FlujoTrabajo.css");
+@import url("Componentes/BannerContacto.css");
+@import url("Componentes/PreguntasFrecuentes.css");
+@import url("Componentes/TiposDePaginas.css");
+@import url("Componentes/Formulario.css");
+@import url("Componentes/PieDePagina.css");
+@import url("Componentes/Menu.css");
+@import url("Componentes/Encabezado.css")

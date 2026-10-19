@@ -1,0 +1,46 @@
+/* ==========================================================
+   Componente: CTA WhatsApp (¡Contáctame directamente aquí!)
+   ========================================================== */
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 40px 24px;
+  background: var(--surface);
+  border-block: 1px solid var(--border);
+  color: inherit;
+  text-decoration: none;
+  transition: box-shadow .2s;
+}
+.cta:hover { box-shadow: 0 0 32px color-mix(in srgb, var(--success) 20%, transparent); }
+.cta:focus-visible { outline: 2px solid var(--accent-cyan); outline-offset: -4px; }
+
+/* Ícono (img sin src = espacio reservado) */
+.cta__icon {
+  display: block;
+  flex: none;
+  width: 154px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px color-mix(in srgb, var(--success) 70%, transparent));
+}
+.cta__icon:not([src]) { outline: 1px dashed var(--border); outline-offset: -1px; }
+
+.cta__text { text-align: center; }
+
+.cta__title {
+  text-transform: uppercase;
+  text-shadow: 0 0 16px color-mix(in srgb, var(--accent-cyan) 60%, transparent);
+}
+.cta__sub {
+  margin-top: 4px;
+  color: var(--text-secondary);
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 800px) {
+  .cta { flex-direction: column; gap: 20px; }
+  .cta__title { font-size: var(--h2-size); line-height: var(--h2-line); }
+}

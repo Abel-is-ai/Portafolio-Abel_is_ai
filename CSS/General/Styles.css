@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+    /* ------------- Colores ------------- */
+
+    --background: #080A0F; /* Fondo principal */
+    --surface: #161B22; /* Tarjetas, navbar, paneles */
+    --surface-hover: #1F2937; /* Hover, botones secundarios */
+    --border: #273244; /* Bordes de cards, separadores, inputs */
+
+    --accent-cyan: #00E5FF;  /* Botones, líneas, detalles LED */
+    --accent-dark: #007C91; /* Estados menos brillantes */
+    --accent-purple: #8B5CF6; /* IA, efectos, gradientes */
+    --accent-purple-dark: #2A2440; /* Relleno del botón secundario */
+
+    --success: #22C55E; /* Éxito, confirmación */
+    --error: #EF4444; /* Error, alerta */
+
+    --text-primary: #F8FAFD; /* Texto principal */
+    --text-secondary: #94A3B8; /* Texto secundario */
+
+    /* ------------- Familias tipográficas ------------- */
+    --font-principal: "Space Grotesk", system-ui, sans-serif;
+    --font-secundaria: "JetBrains Mono", ui-monospace, monospace;
+
+    /* ------------- Escala tipográfica (tamaño / interlineado) ------------- */
+    --hero-size: 64px; --hero-line: 72px; --hero-weight: 700;
+    --h1-size: 48px; --h1-line: 56px; --h1-weight: 700;
+    --h2-size: 32px; --h2-line: 40px; --h2-weight: 500;
+    --h3-size: 24px; --h3-line: 32px; --h3-weight: 400;
+    --secundaria-size: 24px;  --secundaria-line: auto;  --secundaria-weight: 400;
+    --body-size: 16px; --body-line: 24px; --body-weight: 400;
+    --small-size:14px; --small-line: 20px; --small-weight: 400;
+    --code-size: 14px; --code-line: 20px; --code-weight: 400;
+}
+
+    /* ---------- Base ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-principal);
+    font-size: var(--body-size);
+    line-height: var(--body-line);
+    font-weight: var(--body-weight);
+    }
+
+    /* ------------- Estilo de texto  ------------- */
+    .hero  { font: var(--hero-weight)  var(--hero-size)/var(--hero-line)   var(--font-principal); }
+    h1, .h1 { font: var(--h1-weight)   var(--h1-size)/var(--h1-line)       var(--font-principal); margin: 0; }
+    h2, .h2 { font: var(--h2-weight)   var(--h2-size)/var(--h2-line)       var(--font-principal); margin: 0; }
+    h3, .h3 { font: var(--h3-weight)   var(--h3-size)/var(--h3-line)       var(--font-principal); margin: 0; }
+    .secundaria { font-family: var(--font-secundaria); font-size: var(--secundaria-size); font-weight: var(--secundaria-weight); line-height: normal; color: var(--text-secondary); }
+    p, .body  { font: var(--body-weight)  var(--body-size)/var(--body-line)   var(--font-principal); }
+    small, .small { font: var(--small-weight) var(--small-size)/var(--small-line) var(--font-principal); }
+    code, .code { font: var(--code-weight) var(--code-size)/var(--code-line)  var(--font-secundaria); }

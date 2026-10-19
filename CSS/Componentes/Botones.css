@@ -1,0 +1,113 @@
+/* ==========================================================
+   Botones y tags (globales)
+   Esquinas cortadas arriba-derecha y abajo-izquierda.
+   Uso:  <a class="btn btn--primary">Texto</a>
+         <span class="tag tag--success">Laravel</span>
+   ========================================================== */
+
+.btn,
+.tag {
+  /* Variables privadas (cada variante las redefine) */
+  --_cut: 12px;
+  --_bg: var(--surface);
+  --_bd: var(--border);
+  --_fg: var(--text-primary);
+  --_glow: transparent;
+
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: none;
+  color: var(--_fg);
+  text-decoration: none;
+  cursor: pointer;
+  font: var(--code-weight) var(--code-size)/var(--code-line) var(--font-secundaria);
+  filter: drop-shadow(0 0 8px var(--_glow));
+  transition: filter .2s;
+}
+
+/* Capa 1: borde (forma con esquinas cortadas) */
+.btn::before,
+.tag::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--_bd);
+  clip-path: polygon(0 0, calc(100% - var(--_cut)) 0, 100% var(--_cut),
+                     100% 100%, var(--_cut) 100%, 0 calc(100% - var(--_cut)));
+}
+
+/* Capa 2: relleno */
+.btn::after,
+.tag::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  background: var(--_bg);
+  clip-path: polygon(0 0, calc(100% - var(--_cut) + .6px) 0, 100% calc(var(--_cut) - .6px),
+                     100% 100%, calc(var(--_cut) - .6px) 100%, 0 calc(100% - var(--_cut) + .6px));
+}
+
+/* ---------- Botón ---------- */
+.btn { padding: 13px 32px; min-width: 120px; }
+
+.btn:hover { filter: drop-shadow(0 0 14px var(--_glow)); }
+
+/* Focus: anillo cyan exterior */
+.btn:focus-visible { outline: none; }
+.btn:focus-visible::before { inset: -3px; background: var(--accent-cyan); }
+
+/* Deshabilitado */
+.btn:disabled,
+.btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; pointer-events: none; }
+
+/* ---------- Variantes de botón ---------- */
+.btn--primary {
+  --_bg: var(--accent-dark);
+  --_bd: var(--accent-cyan);
+  --_glow: color-mix(in srgb, var(--accent-cyan) 45%, transparent);
+}
+
+.btn--secondary {
+  --_bg: var(--accent-purple-dark);
+  --_bd: var(--accent-purple);
+  --_glow: color-mix(in srgb, var(--accent-purple) 45%, transparent);
+}
+
+.btn--ghost {
+  --_bg: color-mix(in srgb, var(--accent-cyan) 10%, var(--background));
+  --_bd: transparent;
+}
+.btn--ghost:hover { --_bd: var(--accent-dark); }
+
+.btn--light {
+  --_bg: var(--text-primary);
+  --_bd: var(--text-primary);
+  --_fg: var(--background);
+  --_glow: color-mix(in srgb, var(--accent-cyan) 50%, transparent);
+}
+
+/* ---------- Modificadores ---------- */
+.btn--block { display: flex; width: 100%; }
+.btn--upper { text-transform: uppercase; }
+
+/* ---------- Tag (etiqueta pequeña) ---------- */
+.tag {
+  --_cut: 8px;
+  --_c: var(--accent-cyan);
+  --_bg: color-mix(in srgb, var(--_c) 8%, var(--background));
+  --_bd: var(--_c);
+  --_fg: var(--_c);
+  --_glow: color-mix(in srgb, var(--_c) 35%, transparent);
+  padding: 6px 16px;
+  font-size: var(--small-size);
+  cursor: default;
+}
+.tag--success { --_c: var(--success); }
+.tag--purple  { --_c: var(--accent-purple); }
+.tag--error   { --_c: var(--error); }
