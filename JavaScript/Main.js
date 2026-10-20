@@ -7,3 +7,4 @@ import "./Componentes/TiposDePaginas.js"
 import "./Componentes/Formulario.js";
 import "./Componentes/Menu.js";
 import "./Componentes/Encabezado.js"
+import "./Componentes/Glitch.js";

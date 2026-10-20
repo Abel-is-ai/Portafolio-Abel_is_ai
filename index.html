@@ -8,12 +8,15 @@
 </head>
 <body>
 
+  <div class="glitch-bg glitch-bg--page" aria-hidden="true"
+     data-min-wait="2500" data-max-wait="6000"></div>
+
   <!-- ===== ENCABEZADO (aparece al pasar el banner, solo escritorio) ===== -->
   <header class="topbar">
     <div class="topbar__inner">
       <a class="topbar__logo" href="#inicio">Abel_is<span>_ai</span></a>
       <nav class="topbar__nav" aria-label="Principal">
-        <a href="#sobre-mi">01_SOBRE_MÍ</a>
+        <a class="glitch glitch--hover" href="#sobre-mi" data-text="01_SOBRE_MÍ">01_SOBRE_MÍ</a>
         <a href="#proyectos">02_PROYECTOS</a>
         <a href="#contacto">03_CONTACTO</a>
       </nav>
@@ -61,10 +64,14 @@
     <!-- Contenido -->
     <div class="banner__content">
       <h1 class="banner__title hero">Abel_is<span>_ai</span></h1>
-      <p class="banner__role h3">Mente creativa / Programador</p>
+      <p class="banner__role h3">
+        <b class="glitch glitch--loop" data-text="Mente creativa">Mente creativa</b> / Programador
+      </p>
       <div class="banner__actions">
-        <a class="btn btn--primary" href="#contacto">Contactar</a>
-        <a class="btn btn--secondary" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn--primary" data-text="Contactar" href="#contacto">Contactar</span>
+        <a class="btn btn--secondary" data-text="Ver proyectos" href="#proyectos">
+        <span class="glitch glitch--hover" data-text="Ver proyectos">Ver proyectos</span>
+        </a>
       </div>
     </div>
 
@@ -212,7 +219,9 @@
       </article>
       <article class="step">
         <div class="step__head">
-          <h3 class="step__title h2">Codificar</h3>
+          <h3 class="step__title h2">
+            <b class="glitch glitch--loop" data-text="Codificar">Codificar</b>
+          </h3>
           <span class="step__num">03</span>
         </div>
         <p class="step__text">Con supervisión profesional y apoyo de herramientas de IA, programamos el diseño y lo convertimos en un sitio totalmente funcional, lo más fiel posible al prototipo.</p>
@@ -245,7 +254,9 @@
 
   <!-- ===== PREGUNTAS FRECUENTES ===== -->
   <section class="faq" id="faq">
-    <h2 class="faq__title h1">Preguntas frecuentes</h2>
+  <h2 class="faq__title h1">
+    <b class="glitch glitch--reveal" data-text="Preguntas frecuentes">Preguntas frecuentes</b>
+  </h2>
     <div class="faq__list">
         <details class="faq__item">
           <summary class="faq__q">&gt; ¿Por qué mi negocio necesita una página web?</summary>
@@ -376,7 +387,7 @@
   <section class="contact" id="contacto">
     <h2 class="contact__title h1">
       <span class="contact__brace">{</span>
-      Contáctame
+        <b class="glitch glitch--loop" data-text="Contáctame">Contáctame</b>
       <span class="contact__brace">}</span>
     </h2>
     <p class="contact__intro secundaria">¡No pierdas la oportunidad! Envíame un mensaje y trabajemos juntos.</p>
@@ -449,7 +460,9 @@
         </div>
         <p class="contact__count" aria-hidden="true">0/500</p>
  
-        <button class="btn btn--secondary btn--block btn--upper contact__submit" type="submit">Enviar datos</button>
+        <button class="btn btn--secondary btn--block btn--upper contact__submit" type="submit">
+  <span class="glitch glitch--hover" data-text="Enviar datos">Enviar datos</span>
+</button>
         <p class="contact__status" role="status"></p>
       </form>
     </div>
