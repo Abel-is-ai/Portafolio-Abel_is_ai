@@ -57,7 +57,7 @@
 
 .project__body { padding: 24px 12px 12px; }
 .project__name { margin-bottom: 8px; }
-.project__desc { margin: 0 0 16px; max-width: 60ch; }
+.project__desc { margin: 0 0 16px; max-width: 60ch; text-align: justify; }
 
 .project__tags { display: flex; flex-wrap: wrap; gap: 16px; }
 
