@@ -17,11 +17,11 @@
   text-align: center;
   text-transform: uppercase;
 }
-.projects__tag {
-  color: var(--accent-cyan);
-  text-shadow: 0 0 12px var(--accent-cyan);
-  text-transform: none;
-  font: 500 var(--h3-size)/var(--h3-line) var(--font-secundaria);
+.project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 .projects__intro {
   max-width: 560px;
@@ -55,7 +55,12 @@
 }
 .project__img:not([src]) { outline: 1px dashed var(--border); outline-offset: -1px; }
 
-.project__body { padding: 24px 12px 12px; }
+.project__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px 12px 12px;
+}
 .project__name { margin-bottom: 8px; }
 .project__desc { margin: 0 0 16px; max-width: 60ch; text-align: justify; }
 
@@ -64,10 +69,11 @@
 .project__actions {
   display: flex;
   gap: 16px;
-  margin-top: 24px;
+  margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--border);
 }
+
 .project__actions .btn { flex: 1; min-width: 0; padding-inline: 16px; }
 
 /* ---------- Móvil ---------- */
