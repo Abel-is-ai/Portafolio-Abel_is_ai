@@ -92,9 +92,27 @@
   --_glow: color-mix(in srgb, var(--accent-cyan) 50%, transparent);
 }
 
-/* ---------- Modificadores ---------- */
+/* ---------- Modificadores de botón de mi forma de trabajar ---------- */
 .btn--block { display: flex; width: 100%; }
 .btn--upper { text-transform: uppercase; }
+
+/* ---------- Ícono dentro del botón ---------- */
+.btn { gap: 10px; }
+
+.btn__icon {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+  transition: transform .2s;
+}
+.btn:hover .btn__icon { transform: translateY(2px); }
+
+/* ---------- CTA de la sección "Mi forma de trabajar" ---------- */
+.workflow__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
 
 /* ---------- Tag (etiqueta pequeña) ---------- */
 .tag {
